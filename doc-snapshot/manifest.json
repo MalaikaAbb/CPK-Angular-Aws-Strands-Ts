@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "docsRoot": "https://docs.copilotkit.ai/angular/strands-typescript",
+  "syncedAt": "2026-08-18T06:34:52.188Z",
+  "pages": {
+    "/angular/strands-typescript": {
+      "file": "angular__strands-typescript.md",
+      "sha256": "809757ff66244076efa24f41a0e55a1196b29d32ab7b285eb16ce17aba3f2094",
+      "bytes": 6749,
+      "lines": 172,
+      "routes": [
+        "/",
+        "/doc-sync"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:34:52 GMT"
+    },
+    "/angular/strands-typescript/guides/a2ui": {
+      "file": "angular__strands-typescript__guides__a2ui.md",
+      "sha256": "e40cb835f9fd345595f7591d0f967633575ecb15141a40f8b3d90067156e4259",
+      "bytes": 5881,
+      "lines": 195,
+      "routes": [
+        "/a2ui"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:34:52 GMT"
+    },
+    "/angular/strands-typescript/guides/chat-ui": {
+      "file": "angular__strands-typescript__guides__chat-ui.md",
+      "sha256": "325b5a79a075ab0018a390bf418937739be63f3041a7b6b9095494447927cfb1",
+      "bytes": 5153,
+      "lines": 178,
+      "routes": [
+        "/chat-ui"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:34:52 GMT"
+    },
+    "/angular/strands-typescript/guides/frontend-tools-generative-ui": {
+      "file": "angular__strands-typescript__guides__frontend-tools-generative-ui.md",
+      "sha256": "801e511697f7247c5ac3254b58091b479861da47de453fbe2663b56438ae14cc",
+      "bytes": 5740,
+      "lines": 178,
+      "routes": [
+        "/frontend-tools-generative-ui"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:34:52 GMT"
+    },
+    "/angular/strands-typescript/guides/human-in-the-loop": {
+      "file": "angular__strands-typescript__guides__human-in-the-loop.md",
+      "sha256": "a8d9877a20a1f0ac6752ca708a77e5c83e8efa442554724f57c5e0e851b83696",
+      "bytes": 7184,
+      "lines": 227,
+      "routes": [
+        "/human-in-the-loop"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:34:52 GMT"
+    },
+    "/angular/strands-typescript/guides/shared-state": {
+      "file": "angular__strands-typescript__guides__shared-state.md",
+      "sha256": "4dbf4395dfc9fa4bce446d388d769b941fcb7d2da78e62f8bf97f06311b44519",
+      "bytes": 4734,
+      "lines": 151,
+      "routes": [
+        "/shared-state"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:34:52 GMT"
+    },
+    "/angular/strands-typescript/guides/threads-memory-attachments-headless": {
+      "file": "angular__strands-typescript__guides__threads-memory-attachments-headless.md",
+      "sha256": "e72943b97a9215b3c075ebea4ffb58e1df841d8847c8f0d14a9142c2078c9641",
+      "bytes": 8956,
+      "lines": 302,
+      "routes": [
+        "/threads",
+        "/memory",
+        "/attachments",
+        "/headless"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:34:53 GMT"
+    },
+    "/angular/strands-typescript/guides/voice-multimodal": {
+      "file": "angular__strands-typescript__guides__voice-multimodal.md",
+      "sha256": "6f33c090f125c23feea14580c3d5c5544a3751cf3b56af85910008e84d9c5d09",
+      "bytes": 3818,
+      "lines": 111,
+      "routes": [
+        "/voice-multimodal"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:34:53 GMT"
+    },
+    "/angular/strands-typescript/quickstart": {
+      "file": "angular__strands-typescript__quickstart.md",
+      "sha256": "809757ff66244076efa24f41a0e55a1196b29d32ab7b285eb16ce17aba3f2094",
+      "bytes": 6749,
+      "lines": 172,
+      "routes": [
+        "/quickstart"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:34:53 GMT"
+    }
+  },
+  "sitemap": {
+    "fetchedAt": "2026-08-18T06:34:52.188Z",
+    "urlsUnderRoot": 3,
+    "knownUnmapped": [
+      "https://docs.copilotkit.ai/angular/strands-typescript/ag-ui",
+      "https://docs.copilotkit.ai/angular/strands-typescript/copilot-runtime"
+    ]
+  }
+}
