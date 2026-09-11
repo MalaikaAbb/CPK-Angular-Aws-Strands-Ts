@@ -183,7 +183,7 @@ Demo routes share the app-root provider, so a conversation started in one demo c
 | `/` | Introduction | Two green dots in the connection panel. |
 | `/quickstart` | Quickstart | Ask *Can you tell me a joke?* — tokens stream in and render as markdown. |
 | `/chat-ui` | Chat UI and customization | Four surfaces in tabs; popup and sidebar trap focus and close on Escape. |
-| `/frontend-tools-generative-ui` | Frontend tools and generative UI | Ask *What's the weather in Tokyo?* — see the tool-name note in Troubleshooting. |
+| `/frontend-tools-generative-ui` | Frontend tools and generative UI | Ask *Show me incident INC-4711 at sev1* for the display-only component; *What's the weather in Tokyo?* for the server-side tool — see the tool-name note in Troubleshooting. |
 | `/a2ui` | A2UI schemas, styling, recovery | Inert until an `a2ui.catalog` is supplied — the route page explains why. |
 | `/voice-multimodal` | Voice and multimodal input | Attachments work; transcription fails by design (no service configured). |
 | `/human-in-the-loop` | Human-in-the-loop and interrupts | Ask it to delete your account with approval — nothing streams until you click. |
