@@ -4,3 +4,6 @@
 # The snapshot itself (doc-snapshot/pages/, manifest.json, CHANGELOG.md)
 # IS committed; it is the baseline every diff is taken against.
 doc-snapshot/reports/
+
+# Dependencies are installed from package-lock.json, never committed.
+node_modules/
