@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { StatusBadge } from '../components/ui';
+import { RouteStatusChatComponent } from '../features/route-status/route-status-chat.component';
 import { ALL_ROUTES, docUrl } from '../lib/nav-config';
 
 @Component({
   selector: 'app-status-page',
-  imports: [RouterLink, StatusBadge],
+  imports: [RouterLink, StatusBadge, RouteStatusChatComponent],
   template: `
     <header class="mb-6 border-b border-slate-200 pb-5">
       <h1 class="text-2xl font-bold text-slate-900">Status overview</h1>
@@ -71,6 +72,22 @@ import { ALL_ROUTES, docUrl } from '../lib/nav-config';
       implemented, but a license or a runtime capability outside this repo
       limits it. Reference: intentionally not a live feature.
     </p>
+
+    <section class="mt-10 border-t border-slate-200 pt-6">
+      <h2 class="text-lg font-semibold text-slate-900">Ask about the ledger</h2>
+      <p class="mt-2 mb-4 text-sm text-slate-600">
+        The same <code>ALL_ROUTES</code> array the table above renders is also
+        published to the agent as context, so it can answer from this repo's
+        records rather than from what it remembers about CopilotKit. Ask it for
+        a route — &ldquo;what's the status of /memory?&rdquo; — and it calls
+        <code>show_route_status</code> to render that one record as a card.
+        Ask for a route this harness does not have and it should say so and
+        name what the page did send, rather than produce a plausible card.
+      </p>
+      <div class="h-[32rem] overflow-hidden rounded-lg border border-slate-200">
+        <app-route-status-chat />
+      </div>
+    </section>
   `,
 })
 export default class StatusPage {

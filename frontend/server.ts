@@ -21,14 +21,46 @@
  * https://docs.copilotkit.ai/angular/strands-typescript/guides/a2ui
  */
 import { createServer } from "node:http";
-import { CopilotRuntime } from "@copilotkit/runtime/v2";
+import { fileURLToPath } from "node:url";
+import { CopilotKitIntelligence, CopilotRuntime } from "@copilotkit/runtime/v2";
 import { createCopilotNodeListener } from "@copilotkit/runtime/v2/node";
 import { HttpAgent } from "@ag-ui/client";
+
+/**
+ * Nothing in this project loads `frontend/.env`: `ng serve` does not, and this
+ * file previously read only `AWS_STRANDS_AGENT_URL` and `PORT` from the shell.
+ * `CPK_INTELLIGENCE_API_KEY` lives in `frontend/.env`, so the runtime has to
+ * load that file itself before constructing the Intelligence client.
+ *
+ * `process.loadEnvFile` is Node's own loader (>= 20.12; this project runs
+ * Node 24), so it adds no dependency and needs no npm script — both
+ * `package.json` and `node --env-file` were unavailable here. The path is
+ * resolved from `import.meta.url` so it does not depend on the cwd, and the
+ * call is guarded so a missing `.env` leaves dev running instead of crashing.
+ */
+try {
+  process.loadEnvFile(fileURLToPath(new URL(".env", import.meta.url)));
+} catch {
+  // No .env next to this file — fall back to whatever the shell exported.
+}
 
 // backend/main.ts mounts the AWS Strands AG-UI endpoint on POST / and binds
 // port 8000.
 const agentUrl =
   process.env["AWS_STRANDS_AGENT_URL"] ?? "http://localhost:8000/";
+
+/**
+ * CopilotKit Intelligence client.
+ * https://docs.copilotkit.ai/intelligence/connect-your-runtime
+ *
+ * `apiKey` is the only required field — the key scopes the project. `apiUrl`
+ * and `wsUrl` are deliberately left unset so both planes point at the managed
+ * platform; that page is explicit that they are overridden together or not at
+ * all, because the REST and realtime planes live on different hosts.
+ */
+const intelligence = new CopilotKitIntelligence({
+  apiKey: process.env["CPK_INTELLIGENCE_API_KEY"]!,
+});
 
 const runtime = new CopilotRuntime({
   agents: {
@@ -36,6 +68,29 @@ const runtime = new CopilotRuntime({
     support: new HttpAgent({ url: agentUrl }),
   },
   a2ui: {},
+  // Passing `intelligence` (never `runner` — the two cannot be combined) is
+  // what puts this runtime in Intelligence mode. An SSE runtime replies in the
+  // browser exactly the same way with the credential never read.
+  intelligence,
+  /**
+   * LOCAL PLACEHOLDER — NOT AN AUTHENTICATION CHECK.
+   *
+   * Threads are per-user, and the runtime options type requires
+   * `identifyUser` for any runtime serving a web surface. This harness has no
+   * login, and the browser sends no `x-user-id` / `x-user-name` header, so in
+   * practice every local visitor falls through to the same constant id and
+   * shares one thread history. That is acceptable for a local doc harness and
+   * for nothing else.
+   *
+   * In production, resolve the user from a server-verified session or bearer
+   * token on `request` and THROW on an unauthenticated request. Never trust a
+   * caller-supplied id header: anyone can set one and read another user's
+   * threads.
+   */
+  identifyUser: (request) => ({
+    id: request.headers.get("x-user-id") ?? "local-harness-user",
+    name: request.headers.get("x-user-name") ?? "Local harness user",
+  }),
 });
 
 const port = Number(process.env["PORT"] ?? 8200);
