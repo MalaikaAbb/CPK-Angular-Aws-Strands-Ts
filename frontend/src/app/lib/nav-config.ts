@@ -201,6 +201,43 @@ export const NAV: NavGroup[] = [
     ],
   },
   {
+    title: 'Runtime and protocol',
+    routes: [
+      {
+        path: '/copilot-runtime',
+        hasDemo: true,
+        title: 'Copilot Runtime',
+        docPath: '/angular/strands-typescript/copilot-runtime',
+        summary:
+          'A second agents-map key, my_agent, addressed from copilot-chat by that key alone.',
+        status: 'working',
+      },
+      {
+        path: '/ag-ui',
+        hasDemo: true,
+        title: 'AG-UI',
+        docPath: '/angular/strands-typescript/ag-ui',
+        summary:
+          'injectAgentStore signals for message count and run status, and a raw AG-UI event subscription on store().agent.',
+        status: 'working',
+      },
+    ],
+  },
+  {
+    title: 'Multi-agent',
+    routes: [
+      {
+        path: '/subagents',
+        hasDemo: true,
+        title: 'Sub-agents',
+        docPath: '/angular/strands-typescript/multi-agent/subagents',
+        summary:
+          'A supervisor delegating to research, writing, and critique sub-agents, with a live delegation log driven by shared state.',
+        status: 'working',
+      },
+    ],
+  },
+  {
     title: 'Doc Sync',
     routes: [
       {

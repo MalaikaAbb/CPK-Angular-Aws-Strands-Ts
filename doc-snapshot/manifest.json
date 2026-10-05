@@ -1,32 +1,56 @@
 {
   "schema": 1,
   "docsRoot": "https://docs.copilotkit.ai/angular/strands-typescript",
-  "syncedAt": "2026-09-14T11:38:56.328Z",
+  "syncedAt": "2026-10-05T07:35:50.707Z",
   "pages": {
     "/angular/strands-typescript": {
       "file": "angular__strands-typescript.md",
-      "sha256": "2289328f278b9174ef38ff2855ff3eb93d7c72d233bc26a8c6415d23bed5ece8",
-      "bytes": 7173,
-      "lines": 185,
+      "sha256": "c012b2e7d1335003a803a783c9591e970f0d4da2a17ff5c2421c22721fe0f97a",
+      "bytes": 7481,
+      "lines": 191,
       "routes": [
         "/",
         "/doc-sync"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Mon, 14 Sep 2026 11:38:57 GMT"
+      "date": "Mon, 05 Oct 2026 07:35:51 GMT"
+    },
+    "/angular/strands-typescript/ag-ui": {
+      "file": "angular__strands-typescript__ag-ui.md",
+      "sha256": "5f55319cf18e45d7c144c37b848f8ce5bc1da95e72fd45c5f964008b4ebdac91",
+      "bytes": 4370,
+      "lines": 132,
+      "routes": [
+        "/ag-ui"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Mon, 05 Oct 2026 07:35:51 GMT"
+    },
+    "/angular/strands-typescript/copilot-runtime": {
+      "file": "angular__strands-typescript__copilot-runtime.md",
+      "sha256": "e560c658489500a65aa13c93e875e61c822b3f967b3717e4c5e6eb0b9099dee9",
+      "bytes": 11199,
+      "lines": 267,
+      "routes": [
+        "/copilot-runtime"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Mon, 05 Oct 2026 07:35:51 GMT"
     },
     "/angular/strands-typescript/guides/a2ui": {
       "file": "angular__strands-typescript__guides__a2ui.md",
-      "sha256": "fd13fdab11f72a502a344825b8f7499fe4e4b11069ab5489c9f6246cd91fb990",
-      "bytes": 5861,
-      "lines": 195,
+      "sha256": "4f3c8bf330064cb986107bab5a19671a96d688b108bb5dcce5e12e2b8ea2c1a3",
+      "bytes": 6866,
+      "lines": 219,
       "routes": [
         "/a2ui"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Mon, 14 Sep 2026 11:38:57 GMT"
+      "date": "Mon, 05 Oct 2026 07:35:51 GMT"
     },
     "/angular/strands-typescript/guides/chat-ui": {
       "file": "angular__strands-typescript__guides__chat-ui.md",
@@ -38,19 +62,19 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Mon, 14 Sep 2026 11:38:57 GMT"
+      "date": "Mon, 05 Oct 2026 07:35:51 GMT"
     },
     "/angular/strands-typescript/guides/frontend-tools-generative-ui": {
       "file": "angular__strands-typescript__guides__frontend-tools-generative-ui.md",
-      "sha256": "51910a830a64f922221645caa55aed6daf0b399d6d8cba954f8caadd35e6cbf1",
-      "bytes": 7896,
+      "sha256": "b4d69fc7f4787edcf2704c4e5c0b120e6ba3ef81fca3039e2499daaf9ab9fa7b",
+      "bytes": 7900,
       "lines": 236,
       "routes": [
         "/frontend-tools-generative-ui"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Mon, 14 Sep 2026 11:38:57 GMT"
+      "date": "Mon, 05 Oct 2026 07:35:51 GMT"
     },
     "/angular/strands-typescript/guides/human-in-the-loop": {
       "file": "angular__strands-typescript__guides__human-in-the-loop.md",
@@ -62,7 +86,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Mon, 14 Sep 2026 11:38:57 GMT"
+      "date": "Mon, 05 Oct 2026 07:35:52 GMT"
     },
     "/angular/strands-typescript/guides/shared-state": {
       "file": "angular__strands-typescript__guides__shared-state.md",
@@ -74,7 +98,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Mon, 14 Sep 2026 11:38:57 GMT"
+      "date": "Mon, 05 Oct 2026 07:35:51 GMT"
     },
     "/angular/strands-typescript/guides/threads-memory-attachments-headless": {
       "file": "angular__strands-typescript__guides__threads-memory-attachments-headless.md",
@@ -89,35 +113,47 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Mon, 14 Sep 2026 11:38:57 GMT"
+      "date": "Mon, 05 Oct 2026 07:35:51 GMT"
     },
     "/angular/strands-typescript/guides/voice-multimodal": {
       "file": "angular__strands-typescript__guides__voice-multimodal.md",
-      "sha256": "6f33c090f125c23feea14580c3d5c5544a3751cf3b56af85910008e84d9c5d09",
-      "bytes": 3818,
-      "lines": 111,
+      "sha256": "5354b3b4dc086ce7b149aee309e000e1ca997d98e24c107ebef8945e8e34d0d1",
+      "bytes": 4516,
+      "lines": 128,
       "routes": [
         "/voice-multimodal"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Mon, 14 Sep 2026 11:38:57 GMT"
+      "date": "Mon, 05 Oct 2026 07:35:51 GMT"
+    },
+    "/angular/strands-typescript/multi-agent/subagents": {
+      "file": "angular__strands-typescript__multi-agent__subagents.md",
+      "sha256": "8cee4227c95e132f85770bb1a80c16cb800e316d1d877640b2a2aa754eefcbba",
+      "bytes": 11439,
+      "lines": 320,
+      "routes": [
+        "/subagents"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Mon, 05 Oct 2026 07:35:51 GMT"
     },
     "/angular/strands-typescript/quickstart": {
       "file": "angular__strands-typescript__quickstart.md",
-      "sha256": "2289328f278b9174ef38ff2855ff3eb93d7c72d233bc26a8c6415d23bed5ece8",
-      "bytes": 7173,
-      "lines": 185,
+      "sha256": "c012b2e7d1335003a803a783c9591e970f0d4da2a17ff5c2421c22721fe0f97a",
+      "bytes": 7481,
+      "lines": 191,
       "routes": [
         "/quickstart"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Mon, 14 Sep 2026 11:38:57 GMT"
+      "date": "Mon, 05 Oct 2026 07:35:51 GMT"
     }
   },
   "sitemap": {
-    "fetchedAt": "2026-09-14T11:38:56.328Z",
+    "fetchedAt": "2026-10-05T07:35:50.707Z",
     "urlsUnderRoot": 3,
     "knownUnmapped": [
       "https://docs.copilotkit.ai/angular/strands-typescript/ag-ui",

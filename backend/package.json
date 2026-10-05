@@ -18,9 +18,15 @@
   "dependencies": {
     "@ag-ui/aws-strands": "^0.3.0",
     "@modelcontextprotocol/sdk": "^1.30.0",
-    "@strands-agents/sdk": "^1.17.0",
+    "@strands-agents/sdk": "^1.19.0",
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "openai": "^6.49.0"
+  },
+  "overrides": {
+    "@ag-ui/core": "0.0.59",
+    "@ag-ui/client": "0.0.59",
+    "@ag-ui/encoder": "0.0.59",
+    "@ag-ui/proto": "0.0.59"
   }
 }
