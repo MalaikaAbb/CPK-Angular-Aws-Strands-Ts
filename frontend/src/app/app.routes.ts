@@ -53,6 +53,19 @@ export const routes: Routes = [
     path: 'headless/demo',
     loadComponent: () => import('./pages/demos').then((m) => m.HeadlessDemo),
   },
+  {
+    path: 'copilot-runtime/demo',
+    loadComponent: () =>
+      import('./pages/demos').then((m) => m.CopilotRuntimeDemo),
+  },
+  {
+    path: 'ag-ui/demo',
+    loadComponent: () => import('./pages/demos').then((m) => m.AgUiDemo),
+  },
+  {
+    path: 'subagents/demo',
+    loadComponent: () => import('./pages/demos').then((m) => m.SubagentsDemo),
+  },
 
   // Doc routes, inside the sidebar chrome.
   {
@@ -86,6 +99,12 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/attachments'),
       },
       { path: 'headless', loadComponent: () => import('./pages/headless') },
+      {
+        path: 'copilot-runtime',
+        loadComponent: () => import('./pages/copilot-runtime'),
+      },
+      { path: 'ag-ui', loadComponent: () => import('./pages/ag-ui') },
+      { path: 'subagents', loadComponent: () => import('./pages/subagents') },
       { path: 'status', loadComponent: () => import('./pages/status') },
       { path: 'doc-sync', loadComponent: () => import('./pages/doc-sync') },
       { path: '**', redirectTo: '' },

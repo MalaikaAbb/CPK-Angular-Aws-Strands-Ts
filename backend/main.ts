@@ -4,6 +4,8 @@ import { StrandsAgent } from "@ag-ui/aws-strands";
 import { createStrandsApp } from "@ag-ui/aws-strands/server";
 import { tool } from "@strands-agents/sdk";
 import {z} from 'zod';
+import { critiqueAgent, researchAgent, writingAgent } from "./tools.js";
+import { makeSubagentStateFromResult } from "./state.js";
 
 /** What the published `WeatherResult` interface says a reading looks like. */
 export interface WeatherReading {
@@ -56,7 +58,7 @@ export function getWeatherImpl(location: string): WeatherReading {
 }
 
 export const getWeather = tool({
-  name: "get_weather",
+  name: "getWeather",
   description: "Get current weather for a location.",
   inputSchema: z.object({
     location: z.string().describe("The location to get weather for."),
@@ -70,18 +72,38 @@ const model = new OpenAIModel({
   modelId: "gpt-5.4",
 });
 
+// The sub-agents line is the delegation instruction from the showcase's
+// SYSTEM_PROMPT (showcase/integrations/strands-typescript/src/agent/prompts.ts).
 const agent = new Agent({
   model,
-  systemPrompt: "You are a helpful AI assistant.",
-  tools: [getWeather]
+  systemPrompt: `You are a helpful AI assistant.
+- Delegate work to specialised sub-agents when the user asks for research, drafting, or critique. Tools: \`research_agent\`, \`writing_agent\`, \`critique_agent\`. For non-trivial deliverables delegate in sequence research -> write -> critique. Pass relevant facts/draft through the \`task\` argument. The UI renders a live log of every delegation.`,
+  tools: [getWeather, researchAgent, writingAgent, critiqueAgent]
 });
 
 await agent.initialize();
 
 // Wrap with AG-UI integration
+// `toolBehaviors` wiring for the sub-agent tools is from the showcase's
+// buildShowcaseAgent (showcase/integrations/strands-typescript/src/agent/agent.ts):
+// each delegation appends an entry to the `delegations` state slot.
 const aguiAgent = new StrandsAgent({
   agent,
   name: "strands_agent",
+  config: {
+    toolBehaviors: {
+      // Sub-agents — append a delegation entry carrying the actual output.
+      research_agent: {
+        stateFromResult: makeSubagentStateFromResult("research_agent"),
+      },
+      writing_agent: {
+        stateFromResult: makeSubagentStateFromResult("writing_agent"),
+      },
+      critique_agent: {
+        stateFromResult: makeSubagentStateFromResult("critique_agent"),
+      },
+    },
+  },
 });
 
 // Create the Express app
