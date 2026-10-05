@@ -65,15 +65,15 @@ Rules:
 **Description** — use this template:
 
 ```markdown
-## What
+## What was changed
 One or two sentences. What changed and which routes/doc pages it touches.
 
 ## Doc pages covered
 - https://docs.copilotkit.ai/{framework}/{page}  → route `/{route}`
 
-## Why
+## Why was it changed?
 The reason. If this is a fix, describe the broken behaviour first,
-then the corrected behaviour.
+then the corrected behaviour - compare with CPK docs (Missing sections, new section, docs code changes)
 
 ## Screenshots / logs
 For anything visual or anything that failed. Terminal output is fine.
